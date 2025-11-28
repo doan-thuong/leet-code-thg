@@ -1,0 +1,14 @@
+D:\Document\hackerrank\my-csharp-project\bin\Debug\net6.0\MyCSharpProject.exe
+D:\Document\hackerrank\my-csharp-project\bin\Debug\net6.0\MyCSharpProject.deps.json
+D:\Document\hackerrank\my-csharp-project\bin\Debug\net6.0\MyCSharpProject.runtimeconfig.json
+D:\Document\hackerrank\my-csharp-project\bin\Debug\net6.0\MyCSharpProject.dll
+D:\Document\hackerrank\my-csharp-project\bin\Debug\net6.0\MyCSharpProject.pdb
+D:\Document\hackerrank\my-csharp-project\obj\Debug\net6.0\my-csharp-project.GeneratedMSBuildEditorConfig.editorconfig
+D:\Document\hackerrank\my-csharp-project\obj\Debug\net6.0\my-csharp-project.AssemblyInfoInputs.cache
+D:\Document\hackerrank\my-csharp-project\obj\Debug\net6.0\my-csharp-project.AssemblyInfo.cs
+D:\Document\hackerrank\my-csharp-project\obj\Debug\net6.0\my-csharp-project.csproj.CoreCompileInputs.cache
+D:\Document\hackerrank\my-csharp-project\obj\Debug\net6.0\MyCSharpProject.dll
+D:\Document\hackerrank\my-csharp-project\obj\Debug\net6.0\refint\MyCSharpProject.dll
+D:\Document\hackerrank\my-csharp-project\obj\Debug\net6.0\MyCSharpProject.pdb
+D:\Document\hackerrank\my-csharp-project\obj\Debug\net6.0\my-csharp-project.genruntimeconfig.cache
+D:\Document\hackerrank\my-csharp-project\obj\Debug\net6.0\ref\MyCSharpProject.dll
