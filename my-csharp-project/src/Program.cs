@@ -779,6 +779,43 @@ public class Solution
 
         return -1;
     }
+    public int[] SearchRange(int[] nums, int target)
+    {
+        int l = 0, r = nums.Length - 1, indexMin = -1, indexMax = -1;
+        while (l <= r)
+        {
+            int mid = l + (r - l) / 2;
+
+            if (nums[mid] >= target)
+            {
+                indexMin = nums[mid] == target ? mid : indexMin;
+                r = mid - 1;
+            }
+            else
+            {
+                l = mid + 1;
+            }
+        }
+
+        l = 0; r = nums.Length - 1;
+
+        while (l <= r)
+        {
+            int mid = l + (r - l) / 2;
+
+            if (nums[mid] <= target)
+            {
+                indexMax = nums[mid] == target ? mid : indexMax;
+                l = mid + 1;
+            }
+            else
+            {
+                r = mid - 1;
+            }
+        }
+
+        return new int[] { indexMin, indexMax };
+    }
 
     public static void Main(string[] args)
     {
