@@ -837,6 +837,41 @@ public class Solution
 
         return l;
     }
+    static string Read(string str)
+    {
+        StringBuilder build = new();
+        int count = 1;
+
+        for (int i = 1; i <= str.Length; i++)
+        {
+            if (i < str.Length && str[i] == str[i - 1])
+            {
+                count++;
+            }
+            else
+            {
+                build.Append($"{count}{str[i - 1]}");
+                count = 1;
+            }
+        }
+
+        return build.ToString();
+    }
+    public string CountAndSay(int n)
+    {
+        // if (n == 1) return "1";
+
+        // string prev = CountAndSay(n - 1);
+        // return Read(prev);
+        string result = "1";
+
+        for (int i = 2; i <= n; i++)
+        {
+            result = Read(result);
+        }
+
+        return result;
+    }
 
     public static void Main(string[] args)
     {
