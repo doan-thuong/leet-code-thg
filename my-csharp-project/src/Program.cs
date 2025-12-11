@@ -872,6 +872,42 @@ public class Solution
 
         return result;
     }
+    public string Multiply(string a, string b)
+    {
+        if (a == "0" || b == "0") return "0";
+        StringBuilder result = new();
+
+        int[] nums = new int[a.Length + b.Length];
+
+        for (int i = a.Length - 1; i >= 0; i--)
+        {
+            var digitA = a[i] - '0';
+            for (int j = b.Length - 1; j >= 0; j--)
+            {
+                var digitB = b[j] - '0';
+                var product = digitA * digitB;
+
+                var sum = product + nums[i + j + 1];
+                nums[i + j + 1] = sum % 10;
+                nums[i + j] += sum / 10;
+            }
+        }
+
+        bool started = false;
+        foreach (var x in nums)
+        {
+            if (x != 0 || started)
+            {
+                result.Append(x);
+                started = true;
+            }
+        }
+
+        if (result.Length == 0) return "0";
+
+        return result.ToString();
+    }
+
 
     public static void Main(string[] args)
     {
