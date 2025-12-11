@@ -954,6 +954,31 @@ public class Solution
 
         return nums;
     }
+    public string AddBinary(string a, string b)
+    {
+        int i = a.Length - 1, j = b.Length - 1;
+        StringBuilder build = new();
+        var carry = 0;
+
+        while (i >= 0 || j >= 0 || carry > 0)
+        {
+            int valA = i < 0 ? 0 : a[i] - '0';
+            int valB = j < 0 ? 0 : b[j] - '0';
+
+            var sum = valA + valB + carry;
+            // build.Insert(0, sum % 2);
+            build.Append(sum % 2);
+            carry = sum / 2;
+
+            i--;
+            j--;
+        }
+
+        char[] arr = build.ToString().ToCharArray();
+        Array.Reverse(arr);
+
+        return new string(arr);
+    }
 
     public static void Main(string[] args)
     {
