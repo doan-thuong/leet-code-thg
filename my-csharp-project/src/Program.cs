@@ -907,7 +907,19 @@ public class Solution
 
         return result.ToString();
     }
+    public int LenghtOfLastWord(string s)
+    {
+        s = s.Trim();
+        for (var i = s.Length - 1; i >= 0; i--)
+        {
+            if (s[i] == ' ')
+            {
+                return s.Length - i - 1;
+            }
+        }
 
+        return s.Length;
+    }
 
     public static void Main(string[] args)
     {
