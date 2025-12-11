@@ -920,6 +920,40 @@ public class Solution
 
         return s.Length;
     }
+    public int[] PlusOne(int[] nums)
+    {
+        int cache = 0;
+        int k = 1;
+        for (int i = nums.Length - 1; i >= 0; i--)
+        {
+            int j = nums[i] + k + cache;
+            k = 0;
+            if (j > 9)
+            {
+                cache = 1;
+                j -= 10;
+                nums[i] = j;
+            }
+            else
+            {
+                cache = 0;
+                nums[i] = j;
+            }
+
+            if (cache == 0)
+            {
+                break;
+            }
+        }
+        if (cache != 0)
+        {
+            Array.Resize(ref nums, nums.Length + 1);
+            Array.Copy(nums, 0, nums, 1, nums.Length - 1);
+            nums[0] = 1;
+        }
+
+        return nums;
+    }
 
     public static void Main(string[] args)
     {
