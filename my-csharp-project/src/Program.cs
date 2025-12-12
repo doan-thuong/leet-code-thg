@@ -989,6 +989,25 @@ public class Solution
         }
         return i;
     }
+    public int ClimbStairs(int n)
+    {
+        int ClimbStairs(int num, Dictionary<int, int> memo)
+        {
+            if (num == 0 || num == 1)
+            {
+                return 1;
+            }
+
+            if (!memo.ContainsKey(num))
+            {
+                memo[num] = ClimbStairs(num - 1, memo) + ClimbStairs(num - 2, memo);
+            }
+
+            return memo[num];
+        }
+        Dictionary<int, int> memo = new();
+        return ClimbStairs(n, memo);
+    }
 
     public static void Main(string[] args)
     {
