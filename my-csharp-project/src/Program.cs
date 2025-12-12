@@ -979,6 +979,16 @@ public class Solution
 
         return new string(arr);
     }
+    public int Sqrt(int num)
+    {
+        if (num == 1) return 1;
+        int i = Math.Min(num / 2, 46340);
+        while (i * i > num)
+        {
+            i--;
+        }
+        return i;
+    }
 
     public static void Main(string[] args)
     {
