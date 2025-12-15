@@ -1008,6 +1008,22 @@ public class Solution
         Dictionary<int, int> memo = new();
         return ClimbStairs(n, memo);
     }
+    public void Merge(int[] nums1, int m, int[] nums2, int n)
+    {
+        if (nums1.Length == 0 || nums2.Length == 0) return;
+        if (nums1.Length < nums2.Length)
+        {
+            (nums1, nums2) = (nums2, nums1);
+            (m, n) = (n, m);
+        }
+
+        for (int i = 0; i <= nums2.Length - 1; i++)
+        {
+            nums1[nums1.Length - 1 - i] = nums2[i];
+        }
+
+        Array.Sort(nums1);
+    }
 
     public static void Main(string[] args)
     {
