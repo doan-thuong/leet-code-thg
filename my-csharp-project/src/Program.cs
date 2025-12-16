@@ -1057,6 +1057,18 @@ public class Solution
 
         return n > 0 ? result : 1 / result;
     }
+    public int MaxSubArray(int[] nums)
+    {
+        int global = nums[0], better = nums[0];
+
+        for (int i = 1; i < nums.Length; i++)
+        {
+            better = Math.Max(nums[i], better + nums[i]);
+            global = better > global ? better : global;
+        }
+
+        return global;
+    }
 
     public static void Main(string[] args)
     {
