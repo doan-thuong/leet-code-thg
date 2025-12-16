@@ -1024,6 +1024,39 @@ public class Solution
 
         Array.Sort(nums1);
     }
+    public double MyPow(double x, int n)
+    {
+        if (x == 1) return 1;
+        if (n == 0) return 1;
+
+        double result = 1;
+
+        if (n == int.MinValue)
+        {
+            result *= x;
+            n++;
+        }
+
+        int i = Math.Abs(n);
+
+        if (i % 2 != 0)
+        {
+            result *= x;
+            i -= 1;
+        }
+
+        while (i >= 1)
+        {
+            if (i % 2 != 0)
+            {
+                result *= x;
+            }
+            x *= x;
+            i /= 2;
+        }
+
+        return n > 0 ? result : 1 / result;
+    }
 
     public static void Main(string[] args)
     {
