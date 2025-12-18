@@ -1069,6 +1069,43 @@ public class Solution
 
         return global;
     }
+    public IList<int> SpiralOrder(int[][] matrix)
+    {
+        int L = 0, R = matrix[0].Length - 1, T = 0, B = matrix.Length - 1;
+
+        IList<int> result = new List<int>();
+
+        while (T <= B && L <= R)
+        {
+            for (int i = L; i <= R; i++)
+            {
+                result.Add(matrix[T][i]);
+            }
+            T++;
+            for (int i = T; i <= B; i++)
+            {
+                result.Add(matrix[i][R]);
+            }
+            R--;
+            if (T <= B)
+            {
+                for (int i = R; i >= L; i--)
+                {
+                    result.Add(matrix[B][i]);
+                }
+                B--;
+            }
+            if (L <= R)
+            {
+                for (int i = B; i >= T; i--)
+                {
+                    result.Add(matrix[i][L]);
+                }
+                L++;
+            }
+        }
+        return result;
+    }
 
     public static void Main(string[] args)
     {
