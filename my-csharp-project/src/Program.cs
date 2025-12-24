@@ -1106,7 +1106,23 @@ public class Solution
         }
         return result;
     }
+    public bool CanJump(int[] nums)
+    {
+        if (nums.Length == 1) return true;
 
+        int max_reach = nums[0];
+        int i = 1;
+
+        while (i <= max_reach)
+        {
+            if (i >= nums.Length) break;
+
+            max_reach = Math.Max(max_reach, nums[i] + i);
+            i++;
+        }
+
+        return max_reach >= nums.Length - 1;
+    }
     public static void Main(string[] args)
     {
         // DateTime start = DateTime.Now;
