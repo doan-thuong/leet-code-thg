@@ -1123,6 +1123,37 @@ public class Solution
 
         return max_reach >= nums.Length - 1;
     }
+    public int[][] Merge(int[][] intervals)
+    {
+        if (intervals.Length <= 1) return intervals;
+
+        Array.Sort(intervals, (a, b) => a[0].CompareTo(b[0]));
+
+        List<int[]> result = new()
+        {
+            intervals[0]
+        };
+
+        int[] last_int = result.Last();
+
+        for (int i = 1; i < intervals.Length; i++)
+        {
+            int cur_start = intervals[i][0];
+            int last_end = last_int[1];
+
+            if (cur_start <= last_end)
+            {
+                last_int[1] = Math.Max(intervals[i].Last(), last_int[1]);
+            }
+            else
+            {
+                result.Add(intervals[i]);
+                last_int = intervals[i];
+            }
+        }
+
+        return result.ToArray();
+    }
     public static void Main(string[] args)
     {
         // DateTime start = DateTime.Now;
